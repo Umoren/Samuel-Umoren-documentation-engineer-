@@ -1,16 +1,425 @@
 ---
-
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Project from "../components/Project.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <article class="prose prose-slate dark:prose-dark max-w-none">
+    <h1 class="text-4xl font-semibold tracking-tight">
+      I create documentation that solves real problems.
+    </h1>
+
+    <p class="text-xl text-slate-600 dark:text-slate-300 mt-6">
+      Technical writer focused on developer experience, documentation systems,
+      and API guides.
+    </p>
+
+    <p>
+      This site showcases selected documentation projects that demonstrate my
+      approach to technical content. Each case study represents a challenge
+      solved through clear, structured documentation.
+    </p>
+
+    <Section title="Documentation Portals">
+      <Project
+        title="Backstage Implementation Guide"
+        role="Documentation Engineer"
+        duration="2023"
+        githubLink="https://github.com/Umoren/koslog"
+      >
+        <p>
+          <strong>Context:</strong> Backstage is an open-source developer portal
+          used by platform engineering teams. Despite good official documentation,
+          teams were struggling with understanding core concepts and implementation.
+        </p>
+
+        <p class="mt-4">
+          <strong>My contribution:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Created a comprehensive guide grounded in a real-world scenario
+            using a fictional company (Koslog)
+          </li>
+          <li>
+            Authored step-by-step tutorials covering core features from initial
+            setup through TechDocs integration
+          </li>
+          <li>
+            Built and published a working demo repository that teams could use
+            as a reference
+          </li>
+          <li>
+            Identified and fixed an undocumented authentication error by
+            contributing directly to the official Backstage documentation via PR
+          </li>
+          <li>
+            Proposed and implemented clearer language in the official docs to
+            help new users understand GitHub authentication flows
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Impact:</strong> The guide and demo project now serve as a reference
+          for platform engineering teams implementing Backstage. Several teams have
+          used my template as a starting point for their own deployments, and my
+          contributions to the official docs have helped prevent common setup errors.
+        </p>
+      </Project>
+
+      <Project
+        title="Ory Documentation Redesign"
+        role="Documentation Engineer"
+        duration="2022"
+        link="https://www.ory.sh/docs/welcome"
+      >
+        <p>
+          <strong>Context:</strong> Ory is an open-source identity management product
+          trusted by companies like OpenAI. The documentation was comprehensive but
+          needed reorganization to better support new adopters dealing with complex
+          systems like OAuth2, Identities, and Permissions.
+        </p>
+
+        <p class="mt-4">
+          <strong>My contribution:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Completely redesigned the welcome page to provide a clearer entry
+            point for new users
+          </li>
+          <li>
+            Restructured getting-started guides to follow a logical progression
+          </li>
+          <li>
+            Added detailed installation steps that were previously missing or
+            assumed
+          </li>
+          <li>
+            Implemented a "Learning from Scratch" section for users new to
+            identity management
+          </li>
+          <li>
+            Created framework-specific integration guides for React and Next.js
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Impact:</strong> Improved discoverability of key documentation
+          sections, leading to a better onboarding experience. Users could more easily
+          understand how Ory's components fit together and find the specific implementation
+          guidance they needed.
+        </p>
+      </Project>
+
+      <Project
+        title="MonoConnect SDK Documentation"
+        role="Technical Writer"
+        duration="2023"
+        link="https://docs.mono.co/"
+      >
+        <p>
+          <strong>Context:</strong> MonoConnect.js is a JavaScript SDK for integrating
+          secure bank account linking. When I started, documentation was limited
+          to an unstructured GitHub README, leading to numerous developer issues.
+        </p>
+
+        <p class="mt-4">
+          <strong>My contribution:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Conducted a full documentation audit based on source code, README,
+            and GitHub issues
+          </li>
+          <li>
+            Migrated content from GitHub to a structured Mintlify documentation
+            site
+          </li>
+          <li>
+            Created framework-specific integration guides for React, Angular,
+            and Next.js
+          </li>
+          <li>
+            Implemented a CI pipeline to test all code examples, preventing
+            documentation rot
+          </li>
+          <li>
+            Built a comprehensive API reference with method signatures and
+            examples
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Impact:</strong> The new documentation portal provided clear navigation,
+          working code examples, and framework-specific guidance, reducing integration
+          time for developers and decreasing support requests.
+        </p>
+      </Project>
+    </Section>
+
+    <Section title="Technical Articles & Guides">
+      <Project
+        title="Docker Init for Node.js"
+        role="Technical Writer"
+        duration="2022"
+        link="https://earthly.dev/blog/docker-init-nodejs/"
+      >
+        <p>
+          <strong>Context:</strong> When Docker released its Docker Init feature,
+          Node.js developers struggled with implementation. The existing documentation
+          didn't provide clear guidance for real-world applications.
+        </p>
+
+        <p class="mt-4">
+          <strong>My contribution:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Built a working example project demonstrating Docker Init with
+            Node.js in a real application context
+          </li>
+          <li>
+            Created step-by-step instructions explaining the process and
+            decisions
+          </li>
+          <li>
+            Published a GitHub repository with starter code for hands-on
+            learning
+          </li>
+          <li>
+            Added visual aids showing terminal output and configuration details
+          </li>
+          <li>
+            Included best practices for container optimization specific to
+            Node.js applications
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Impact:</strong> The article now ranks #1 on Google for "docker
+          init nodejs," positioned above the official documentation, and serves as
+          the primary reference for Node.js developers implementing Docker Init.
+        </p>
+      </Project>
+
+      <Project
+        title="Linux Command Guide for DevOps"
+        role="Technical Writer"
+        duration="2023"
+        link="https://beyondcode.hashnode.dev/mastering-linux-for-devops-engineers"
+      >
+        <p>
+          <strong>Context:</strong> DevOps engineers new to Linux needed a practical
+          guide focusing on real-world scenarios rather than just command syntax.
+        </p>
+
+        <p class="mt-4">
+          <strong>My contribution:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Created a comprehensive guide to essential Linux commands with
+            context and practical examples
+          </li>
+          <li>
+            Organized commands by task category rather than alphabetically
+          </li>
+          <li>Included common troubleshooting scenarios and their solutions</li>
+          <li>
+            Added performance optimization tips for production environments
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Impact:</strong> The guide has become a reference for DevOps engineers
+          transitioning to Linux environments, with particularly strong engagement
+          from junior engineers learning infrastructure management.
+        </p>
+      </Project>
+
+      <Project
+        title="Robotics Documentation"
+        role="Technical Writer"
+        duration="2022"
+        link="https://robonine.com/building-the-future-of-robotics-with-open-source-hardware/"
+      >
+        <p>
+          <strong>Context:</strong> Hardware-focused startups often struggle to explain
+          complex technical concepts to mixed audiences of engineers, investors,
+          and enthusiasts.
+        </p>
+
+        <p class="mt-4">
+          <strong>My contribution:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Created technical content explaining open-source hardware principles
+            for robotics applications
+          </li>
+          <li>
+            Developed visual explanations of complex hardware components and
+            interactions
+          </li>
+          <li>
+            Balanced technical accuracy with accessibility for non-engineering
+            audiences
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Impact:</strong> The content helped bridge the communication gap
+          between technical teams and stakeholders, improving project understanding
+          and support.
+        </p>
+      </Project>
+    </Section>
+
+    <Section title="Documentation Systems & Tools">
+      <Project
+        title="AI Documentation Assistant"
+        role="Developer & Documentation Engineer"
+        duration="2024-Present"
+        githubLink="https://github.com/Umoren"
+      >
+        <p>
+          <strong>Current project:</strong> I'm developing an AI writing assistant
+          for technical documentation, using embeddings and vector search to generate
+          content that follows documentation best practices.
+        </p>
+
+        <p class="mt-4">
+          <strong>Key features:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Training on my documentation corpus to capture writing patterns and
+            style
+          </li>
+          <li>Integration with documentation systems via API</li>
+          <li>Consistency checking against style guides and terminology</li>
+          <li>Code example verification against API specifications</li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Goal:</strong> Create a tool that helps technical writers maintain
+          consistency across large documentation projects while adhering to quality
+          standards and technical accuracy.
+        </p>
+      </Project>
+
+      <Project
+        title="Documentation Testing Framework"
+        role="Technical Lead"
+        duration="2023"
+        githubLink="https://github.com/Umoren"
+      >
+        <p>
+          <strong>Context:</strong> Code examples in documentation often become outdated
+          as APIs evolve, leading to frustrating developer experiences.
+        </p>
+
+        <p class="mt-4">
+          <strong>My contribution:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            Developed a testing framework for automatically extracting and
+            validating code examples from documentation
+          </li>
+          <li>
+            Created a CI pipeline that flags broken examples when APIs change
+          </li>
+          <li>
+            Implemented a reporting system that helps documentation teams
+            prioritize fixes
+          </li>
+        </ul>
+
+        <p class="mt-4">
+          <strong>Impact:</strong> Reduced documentation errors by catching issues
+          before they reached production, improving developer trust in the documentation.
+        </p>
+      </Project>
+    </Section>
+
+    <Section title="Documentation Philosophy">
+      <div class="mt-2 space-y-6">
+        <div>
+          <h3 class="text-lg font-medium">
+            Documentation is a product, not an afterthought
+          </h3>
+          <p>
+            Good documentation needs design, planning, and maintenance just like
+            software. I approach documentation as a product with its own
+            lifecycle, user needs, and success metrics.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium">Test everything, assume nothing</h3>
+          <p>
+            When I document a system, I build from scratch, test every step, and
+            validate all code examples. This catches the "obvious" steps that
+            are clear to experts but critical for new users.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium">Structure trumps prose</h3>
+          <p>
+            The organization of documentation is as important as the content
+            itself. I focus on information architecture that guides users to the
+            right information at the right time in their journey.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium">
+            Documentation should anticipate failure
+          </h3>
+          <p>
+            Great docs don't just show the happy path - they help users
+            understand what went wrong and how to fix it. I create content that
+            addresses common errors and troubleshooting scenarios.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <Section title="Contact">
+      <p>
+        I'm available for documentation projects, technical writing, and
+        consulting on documentation systems and developer experience. If your
+        docs are creating more questions than answers, let's talk.
+      </p>
+
+      <div class="mt-4 space-x-4">
+        <a
+          href="mailto:samuelumoren365@gmail.com"
+          class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+        >
+          Email
+        </a>
+        <a
+          href="https://github.com/Umoren"
+          class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/umoren"
+          class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </Section>
+  </article>
+</Base>

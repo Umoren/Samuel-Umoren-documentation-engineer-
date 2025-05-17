@@ -1,0 +1,89 @@
+---
+export interface Props {
+  title: string;
+  role: string;
+  duration?: string;
+  link?: string;
+  githubLink?: string;
+}
+
+const { title, role, duration, link, githubLink } = Astro.props;
+---
+
+<div class="border-l-2 border-slate-200 dark:border-slate-700 pl-6 py-2 mb-12">
+  <h3 class="text-xl font-medium -mt-1">{title}</h3>
+
+  <div
+    class="text-sm text-slate-600 dark:text-slate-400 mt-1 flex items-center gap-3"
+  >
+    <span>{role}</span>
+    {
+      duration && (
+        <>
+          <span class="text-slate-300 dark:text-slate-600">•</span>
+          <span>{duration}</span>
+        </>
+      )
+    }
+  </div>
+
+  <div class="mt-4 prose dark:prose-dark">
+    <slot />
+  </div>
+
+  {
+    (link || githubLink) && (
+      <div class="mt-4 flex gap-4 text-sm">
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+          >
+            <svg
+              class="h-4 w-4 mr-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            View Project
+          </a>
+        )}
+
+        {githubLink && (
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-300"
+          >
+            <svg
+              class="h-4 w-4 mr-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C6.47715 2 2 6.47715 2 12C2 16.4183 4.95556 20.1095 9 21.3839V19.5C9 19.5 8.5 19.5 8 19C7.27358 18.3539 7.08123 17.2393 6.5 16.5C6.31354 16.2595 5.7 15.5 6 15C7 14.5 7.73037 15.9203 8.5 16.5C9.25 17.0673 10.375 17 11 17C11.2658 17 11.8343 16.9419 12 16.9C12.1716 16.6405 12.4212 16.306 12.7485 16C10 15.5 8 14.5 8 12C8 10.5 8.5 9.5 9.5 8.5C9.29612 8.10224 9 7 9.5 5.5C9.5 5.5 10.5 5.5 12 6.5C13 6 14.5 6 15.5 6.5C17 5.5 18 5.5 18 5.5C18.5 7 18.2039 8.10224 18 8.5C19 9.5 19.5 10.5 19.5 12C19.5 14.5 17.5 15.5 14.7485 16C15.5389 16.7553 16 17.4071 16 18.5V21.3839C20.0444 20.1095 23 16.4183 23 12C23 6.47715 18.5228 2 13 2H12Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            GitHub
+          </a>
+        )}
+      </div>
+    )
+  }
+</div>

@@ -1,0 +1,15 @@
+---
+export interface Props {
+  title: string;
+  id?: string;
+}
+
+const { title, id = title.toLowerCase().replace(/\s+/g, "-") } = Astro.props;
+---
+
+<section id={id} class="mt-16 first:mt-8">
+  <h2 class="text-2xl font-semibold tracking-tight">{title}</h2>
+  <div class="mt-8">
+    <slot />
+  </div>
+</section>

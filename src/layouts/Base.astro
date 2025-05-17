@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Samuel Umoren | Technical Writer & Documentation Engineer",
+  description = "Documentation engineer specializing in developer experience, API documentation, and technical communication.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Minimal favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors"
+  >
+    <ThemeToggle />
+    <main class="mx-auto max-w-prose px-4 py-16 md:py-24">
+      <slot />
+    </main>
+
+    <style is:global>
+      html {
+        font-family: "Inter", system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Subtle grainy texture */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.02;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' /%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Reading comfort */
+      ::selection {
+        @apply bg-amber-100 dark:bg-amber-900 text-slate-900 dark:text-slate-100;
+      }
+
+      /* Focus styles */
+      :focus-visible {
+        @apply outline-blue-600 dark:outline-blue-400 outline-2 outline-offset-2;
+      }
+    </style>
+  </body>
+</html>
