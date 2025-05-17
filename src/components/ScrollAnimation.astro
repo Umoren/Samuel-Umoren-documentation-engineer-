@@ -1,0 +1,80 @@
+---
+
+---
+
+<script>
+  // Initialize intersection observer for scroll animations
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".scroll-animation");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      },
+      {
+        root: null, // viewport
+        threshold: 0.1, // 10% of the item visible
+        rootMargin: "0px 0px -50px 0px", // Trigger slightly before the element is in view
+      }
+    );
+
+    animatedElements.forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+<style is:global>
+  /* Base styles for animations */
+  .scroll-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+
+  /* Animation for different element types */
+  .scroll-animation.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered delays for child elements */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(15px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  .stagger-children.animate-in > *:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .stagger-children.animate-in > *:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .stagger-children.animate-in > *:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .stagger-children.animate-in > *:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  .stagger-children.animate-in > *:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+  .stagger-children.animate-in > *:nth-child(6) {
+    transition-delay: 0.6s;
+  }
+
+  .stagger-children.animate-in > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

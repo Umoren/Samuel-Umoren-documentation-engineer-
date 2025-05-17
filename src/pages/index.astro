@@ -6,26 +6,41 @@ import Project from "../components/Project.astro";
 
 <Base>
   <article class="prose prose-slate dark:prose-dark max-w-none">
-    <h1 class="text-4xl font-semibold tracking-tight">
-      I create documentation that solves real problems.
-    </h1>
+    <div
+      class="flex flex-col md:flex-row gap-8 md:items-center mb-12 scroll-animation"
+    >
+      <div class="flex-1">
+        <h1 class="text-4xl font-semibold tracking-tight">
+          I create documentation that solves real problems.
+        </h1>
 
-    <p class="text-xl text-slate-600 dark:text-slate-300 mt-6">
-      Technical writer focused on developer experience, documentation systems,
-      and API guides.
-    </p>
+        <p class="text-xl text-slate-600 dark:text-slate-300 mt-6">
+          Technical writer focused on developer experience, documentation
+          systems, and API guides.
+        </p>
 
-    <p>
-      This site showcases selected documentation projects that demonstrate my
-      approach to technical content. Each case study represents a challenge
-      solved through clear, structured documentation.
-    </p>
+        <p>
+          This site showcases selected documentation projects that demonstrate
+          my approach to technical content. Each case study represents a
+          challenge solved through clear, structured documentation.
+        </p>
+      </div>
+
+      <div class="flex-shrink-0 mx-auto md:mx-0 order-first md:order-last">
+        <img
+          src="/images/samuel-profile.webp"
+          alt="Samuel Umoren"
+          width="200"
+          height="240"
+          class="rounded-md border-2 border-slate-200 dark:border-slate-700 shadow-md"
+        />
+      </div>
+    </div>
 
     <Section title="Documentation Portals">
       <Project
         title="Backstage Implementation Guide"
         role="Documentation Engineer"
-        duration="2023"
         githubLink="https://github.com/Umoren/koslog"
       >
         <p>
@@ -71,7 +86,7 @@ import Project from "../components/Project.astro";
       <Project
         title="Ory Documentation Redesign"
         role="Documentation Engineer"
-        duration="2022"
+        duration="Contract"
         link="https://www.ory.sh/docs/welcome"
       >
         <p>
@@ -116,7 +131,7 @@ import Project from "../components/Project.astro";
       <Project
         title="MonoConnect SDK Documentation"
         role="Technical Writer"
-        duration="2023"
+        duration="Side Project"
         link="https://docs.mono.co/"
       >
         <p>
@@ -163,7 +178,7 @@ import Project from "../components/Project.astro";
       <Project
         title="Docker Init for Node.js"
         role="Technical Writer"
-        duration="2022"
+        duration="Contract"
         link="https://earthly.dev/blog/docker-init-nodejs/"
       >
         <p>
@@ -211,8 +226,8 @@ import Project from "../components/Project.astro";
         link="https://beyondcode.hashnode.dev/mastering-linux-for-devops-engineers"
       >
         <p>
-          <strong>Context:</strong> DevOps engineers new to Linux needed a practical
-          guide focusing on real-world scenarios rather than just command syntax.
+          <strong>Context:</strong> Many DevOps beginners struggle with the fundamentals
+          of Linux commands when they first start working in terminal environments.
         </p>
 
         <p class="mt-4">
@@ -220,59 +235,26 @@ import Project from "../components/Project.astro";
         </p>
         <ul class="list-disc pl-6 space-y-1">
           <li>
-            Created a comprehensive guide to essential Linux commands with
-            context and practical examples
+            Created a beginner-friendly guide to essential Linux commands for
+            DevOps engineers
           </li>
           <li>
-            Organized commands by task category rather than alphabetically
+            Covered key concepts like file manipulation, process management,
+            networking and SSH basics
           </li>
-          <li>Included common troubleshooting scenarios and their solutions</li>
           <li>
-            Added performance optimization tips for production environments
+            Included practical examples showing real-world usage of each command
+          </li>
+          <li>
+            Provided clear explanations focusing on specifically DevOps-relevant
+            use cases
           </li>
         </ul>
 
         <p class="mt-4">
-          <strong>Impact:</strong> The guide has become a reference for DevOps engineers
-          transitioning to Linux environments, with particularly strong engagement
-          from junior engineers learning infrastructure management.
-        </p>
-      </Project>
-
-      <Project
-        title="Robotics Documentation"
-        role="Technical Writer"
-        duration="2022"
-        link="https://robonine.com/building-the-future-of-robotics-with-open-source-hardware/"
-      >
-        <p>
-          <strong>Context:</strong> Hardware-focused startups often struggle to explain
-          complex technical concepts to mixed audiences of engineers, investors,
-          and enthusiasts.
-        </p>
-
-        <p class="mt-4">
-          <strong>My contribution:</strong>
-        </p>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>
-            Created technical content explaining open-source hardware principles
-            for robotics applications
-          </li>
-          <li>
-            Developed visual explanations of complex hardware components and
-            interactions
-          </li>
-          <li>
-            Balanced technical accuracy with accessibility for non-engineering
-            audiences
-          </li>
-        </ul>
-
-        <p class="mt-4">
-          <strong>Impact:</strong> The content helped bridge the communication gap
-          between technical teams and stakeholders, improving project understanding
-          and support.
+          <strong>Impact:</strong> The article has helped engineers transitioning
+          to DevOps roles understand Linux fundamentals in a practical, hands-on
+          context.
         </p>
       </Project>
     </Section>
@@ -309,57 +291,6 @@ import Project from "../components/Project.astro";
           standards and technical accuracy.
         </p>
       </Project>
-      <Section title="Technical Skills">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 class="text-lg font-medium">Documentation Tools</h3>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Docs-as-code workflows</li>
-              <li>Mintlify, Docusaurus, GitBook</li>
-              <li>Markdown and MDX</li>
-              <li>OpenAPI specification</li>
-              <li>CI/CD for documentation testing</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-lg font-medium">Development</h3>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>JavaScript/TypeScript</li>
-              <li>React and Next.js</li>
-              <li>Node.js</li>
-              <li>GraphQL</li>
-              <li>Docker and containerization</li>
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      <Section title="Technical Skills">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h3 class="text-lg font-medium">Documentation Tools</h3>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>Docs-as-code workflows</li>
-              <li>Mintlify, Docusaurus, GitBook</li>
-              <li>Markdown and MDX</li>
-              <li>OpenAPI specification</li>
-              <li>CI/CD for documentation testing</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-lg font-medium">Development</h3>
-            <ul class="list-disc pl-6 space-y-1">
-              <li>JavaScript/TypeScript</li>
-              <li>React and Next.js</li>
-              <li>Node.js</li>
-              <li>GraphQL</li>
-              <li>Docker and containerization</li>
-            </ul>
-          </div>
-        </div>
-      </Section>
 
       <Project
         title="Documentation Testing Framework"
@@ -395,9 +326,62 @@ import Project from "../components/Project.astro";
         </p>
       </Project>
     </Section>
+  </article>
 
+  <!-- Simple Technical Skills Section -->
+  <div class="mt-16 mb-16">
+    <h2 class="text-2xl font-semibold tracking-tight mb-8">Technical Skills</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-lg font-medium mb-4">Documentation Tools</h3>
+        <ul class="space-y-2 list-disc pl-5">
+          <li>Docs-as-code workflows</li>
+          <li>Mintlify, Docusaurus, GitBook</li>
+          <li>Markdown and MDX</li>
+          <li>OpenAPI specification</li>
+          <li>CI/CD for documentation testing</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-medium mb-4">Development</h3>
+        <ul class="space-y-2 list-disc pl-5">
+          <li>JavaScript/TypeScript</li>
+          <li>React and Next.js</li>
+          <li>Node.js</li>
+          <li>GraphQL</li>
+          <li>Docker and containerization</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-medium mb-4">Industry Knowledge</h3>
+        <ul class="space-y-2 list-disc pl-5">
+          <li>Information architecture</li>
+          <li>Technical SEO</li>
+          <li>User experience design</li>
+          <li>Accessibility standards</li>
+          <li>Content strategy</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-medium mb-4">Collaboration</h3>
+        <ul class="space-y-2 list-disc pl-5">
+          <li>Cross-functional teamwork</li>
+          <li>Developer relations</li>
+          <li>Technical presentations</li>
+          <li>API documentation reviews</li>
+          <li>Documentation systems training</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <article class="prose prose-slate dark:prose-dark max-w-none">
     <Section title="Documentation Philosophy">
-      <div class="mt-2 space-y-6">
+      <div class="mt-2 space-y-6 stagger-children scroll-animation">
         <div>
           <h3 class="text-lg font-medium">
             Documentation is a product, not an afterthought
